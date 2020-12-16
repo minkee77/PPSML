@@ -1,0 +1,1837 @@
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar', semi_neighbor_k=3, shot_num=5, testepisodeSize=1, unlabel_num=10, way_num=5, workers=8)
+=> loaded checkpoint './results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar' (epoch 27)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(27): [100/600]	Time 0.237 (0.239)	Loss 1.082 (0.743)	Prec@1 58.000 (71.782)
+Test-(27): [200/600]	Time 0.202 (0.227)	Loss 1.071 (0.742)	Prec@1 58.000 (72.109)
+Test-(27): [300/600]	Time 0.210 (0.222)	Loss 0.910 (0.742)	Prec@1 76.000 (72.213)
+Test-(27): [400/600]	Time 0.199 (0.221)	Loss 0.393 (0.739)	Prec@1 86.000 (72.314)
+Test-(27): [500/600]	Time 0.217 (0.220)	Loss 0.848 (0.739)	Prec@1 68.000 (72.299)
+ * Prec@1 72.280 Best_prec1 70.788
+Test accuracy 72.28 h 0.7370305
+===================================== Round 1 =====================================
+Testset: 600-------------1
+Test-(27): [100/600]	Time 0.213 (0.237)	Loss 0.834 (0.752)	Prec@1 70.000 (71.762)
+Test-(27): [200/600]	Time 0.202 (0.226)	Loss 0.581 (0.734)	Prec@1 80.000 (72.398)
+Test-(27): [300/600]	Time 0.209 (0.223)	Loss 0.585 (0.721)	Prec@1 78.000 (72.924)
+Test-(27): [400/600]	Time 0.212 (0.221)	Loss 0.366 (0.726)	Prec@1 86.000 (72.678)
+Test-(27): [500/600]	Time 0.208 (0.221)	Loss 1.020 (0.730)	Prec@1 50.000 (72.515)
+ * Prec@1 72.467 Best_prec1 70.788
+Test accuracy 72.46667 h 0.7221771
+===================================== Round 2 =====================================
+Testset: 600-------------2
+Test-(27): [100/600]	Time 0.274 (0.239)	Loss 0.774 (0.730)	Prec@1 76.000 (72.871)
+Test-(27): [200/600]	Time 0.214 (0.229)	Loss 1.117 (0.738)	Prec@1 62.000 (72.547)
+Test-(27): [300/600]	Time 0.237 (0.226)	Loss 0.457 (0.750)	Prec@1 82.000 (72.140)
+Test-(27): [400/600]	Time 0.215 (0.224)	Loss 0.487 (0.761)	Prec@1 82.000 (71.696)
+Test-(27): [500/600]	Time 0.222 (0.223)	Loss 0.807 (0.757)	Prec@1 68.000 (71.948)
+ * Prec@1 72.247 Best_prec1 70.788
+Test accuracy 72.246666 h 0.76032776
+===================================== Round 3 =====================================
+Testset: 600-------------3
+Test-(27): [100/600]	Time 0.220 (0.241)	Loss 0.478 (0.734)	Prec@1 82.000 (73.010)
+Test-(27): [200/600]	Time 0.208 (0.230)	Loss 1.121 (0.736)	Prec@1 60.000 (72.507)
+Test-(27): [300/600]	Time 0.230 (0.227)	Loss 0.715 (0.744)	Prec@1 76.000 (72.126)
+Test-(27): [400/600]	Time 0.211 (0.225)	Loss 0.722 (0.739)	Prec@1 72.000 (72.459)
+Test-(27): [500/600]	Time 0.222 (0.225)	Loss 0.578 (0.742)	Prec@1 72.000 (72.507)
+ * Prec@1 72.510 Best_prec1 70.788
+Test accuracy 72.51 h 0.69838446
+===================================== Round 4 =====================================
+Testset: 600-------------4
+Test-(27): [100/600]	Time 0.211 (0.238)	Loss 0.845 (0.777)	Prec@1 68.000 (71.446)
+Test-(27): [200/600]	Time 0.241 (0.230)	Loss 0.808 (0.757)	Prec@1 64.000 (71.930)
+Test-(27): [300/600]	Time 0.217 (0.227)	Loss 0.718 (0.753)	Prec@1 72.000 (72.080)
+Test-(27): [400/600]	Time 0.207 (0.226)	Loss 0.633 (0.750)	Prec@1 80.000 (72.369)
+Test-(27): [500/600]	Time 0.214 (0.225)	Loss 0.683 (0.750)	Prec@1 72.000 (72.327)
+ * Prec@1 72.363 Best_prec1 70.788
+Test accuracy 72.363335 h 0.7482721
+Aver_accuracy: 72.37334 Aver_h 0.7332383871078492
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar', semi_neighbor_k=3, shot_num=5, testepisodeSize=1, unlabel_num=30, way_num=5, workers=8)
+=> loaded checkpoint './results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar' (epoch 27)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(27): [100/600]	Time 0.205 (0.228)	Loss 0.945 (0.772)	Prec@1 60.000 (71.307)
+Test-(27): [200/600]	Time 0.211 (0.218)	Loss 1.091 (0.769)	Prec@1 80.000 (71.343)
+Test-(27): [300/600]	Time 0.227 (0.213)	Loss 0.921 (0.774)	Prec@1 66.000 (71.017)
+Test-(27): [400/600]	Time 0.212 (0.212)	Loss 0.524 (0.766)	Prec@1 78.000 (71.242)
+Test-(27): [500/600]	Time 0.196 (0.210)	Loss 0.712 (0.772)	Prec@1 72.000 (71.102)
+ * Prec@1 71.080 Best_prec1 70.788
+Test accuracy 71.08 h 0.71511966
+===================================== Round 1 =====================================
+Testset: 600-------------1
+Test-(27): [100/600]	Time 0.189 (0.229)	Loss 1.166 (0.770)	Prec@1 64.000 (72.396)
+Test-(27): [200/600]	Time 0.190 (0.217)	Loss 0.806 (0.774)	Prec@1 70.000 (71.761)
+Test-(27): [300/600]	Time 0.194 (0.212)	Loss 0.565 (0.766)	Prec@1 72.000 (71.708)
+Test-(27): [400/600]	Time 0.202 (0.211)	Loss 0.419 (0.764)	Prec@1 80.000 (71.850)
+Test-(27): [500/600]	Time 0.197 (0.210)	Loss 0.533 (0.773)	Prec@1 86.000 (71.601)
+ * Prec@1 71.707 Best_prec1 70.788
+Test accuracy 71.706665 h 0.72968006
+===================================== Round 2 =====================================
+Testset: 600-------------2
+Test-(27): [100/600]	Time 0.208 (0.224)	Loss 0.820 (0.772)	Prec@1 74.000 (70.970)
+Test-(27): [200/600]	Time 0.191 (0.215)	Loss 0.528 (0.786)	Prec@1 74.000 (70.418)
+Test-(27): [300/600]	Time 0.218 (0.212)	Loss 0.463 (0.783)	Prec@1 88.000 (70.684)
+Test-(27): [400/600]	Time 0.201 (0.210)	Loss 0.572 (0.784)	Prec@1 80.000 (70.828)
+Test-(27): [500/600]	Time 0.186 (0.210)	Loss 0.511 (0.781)	Prec@1 82.000 (70.870)
+ * Prec@1 70.980 Best_prec1 70.788
+Test accuracy 70.98 h 0.7235609
+===================================== Round 3 =====================================
+Testset: 600-------------3
+Test-(27): [100/600]	Time 0.195 (0.225)	Loss 0.285 (0.803)	Prec@1 94.000 (69.663)
+Test-(27): [200/600]	Time 0.225 (0.216)	Loss 0.969 (0.798)	Prec@1 64.000 (70.199)
+Test-(27): [300/600]	Time 0.214 (0.214)	Loss 0.575 (0.790)	Prec@1 84.000 (70.551)
+Test-(27): [400/600]	Time 0.204 (0.213)	Loss 0.594 (0.788)	Prec@1 78.000 (70.663)
+Test-(27): [500/600]	Time 0.203 (0.211)	Loss 0.920 (0.786)	Prec@1 60.000 (70.655)
+ * Prec@1 70.430 Best_prec1 70.788
+Test accuracy 70.43 h 0.76758736
+===================================== Round 4 =====================================
+Testset: 600-------------4
+Test-(27): [100/600]	Time 0.222 (0.226)	Loss 1.217 (0.761)	Prec@1 52.000 (71.525)
+Test-(27): [200/600]	Time 0.203 (0.217)	Loss 1.081 (0.773)	Prec@1 64.000 (71.522)
+Test-(27): [300/600]	Time 0.193 (0.215)	Loss 0.359 (0.780)	Prec@1 90.000 (71.076)
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar', semi_neighbor_k=3, shot_num=5, testepisodeSize=1, unlabel_num=10, way_num=5, workers=8)
+=> loaded checkpoint './results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar' (epoch 20)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(20): [100/600]	Time 0.379 (0.426)	Loss 0.831 (0.735)	Prec@1 70.000 (73.386)
+Test-(20): [200/600]	Time 0.387 (0.408)	Loss 1.109 (0.730)	Prec@1 66.000 (73.473)
+Test-(20): [300/600]	Time 0.383 (0.404)	Loss 0.661 (0.729)	Prec@1 78.000 (73.435)
+Test-(20): [400/600]	Time 0.369 (0.402)	Loss 0.679 (0.730)	Prec@1 68.000 (73.387)
+Test-(20): [500/600]	Time 0.217 (0.380)	Loss 0.500 (0.734)	Prec@1 76.000 (73.078)
+ * Prec@1 72.927 Best_prec1 74.100
+Test accuracy 72.92667 h 0.7555226
+===================================== Round 1 =====================================
+Testset: 600-------------1
+Test-(20): [100/600]	Time 0.235 (0.238)	Loss 0.550 (0.778)	Prec@1 80.000 (71.980)
+Test-(20): [200/600]	Time 0.203 (0.231)	Loss 1.017 (0.739)	Prec@1 66.000 (73.443)
+Test-(20): [300/600]	Time 0.203 (0.227)	Loss 0.623 (0.736)	Prec@1 68.000 (73.508)
+Test-(20): [400/600]	Time 0.252 (0.226)	Loss 0.906 (0.743)	Prec@1 62.000 (73.137)
+Test-(20): [500/600]	Time 0.203 (0.225)	Loss 0.800 (0.742)	Prec@1 70.000 (72.994)
+ * Prec@1 72.950 Best_prec1 74.100
+Test accuracy 72.95 h 0.73427004
+===================================== Round 2 =====================================
+Testset: 600-------------2
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar', semi_neighbor_k=3, shot_num=5, testepisodeSize=1, unlabel_num=10, way_num=5, workers=8)
+=> loaded checkpoint './results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar' (epoch 20)
+FourLayer_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (imgtoclass): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(20): [100/600]	Time 0.202 (0.240)	Loss 0.728 (0.716)	Prec@1 78.000 (73.624)
+Test-(20): [200/600]	Time 0.229 (0.232)	Loss 0.974 (0.736)	Prec@1 66.000 (73.035)
+Test-(20): [300/600]	Time 0.234 (0.229)	Loss 0.760 (0.740)	Prec@1 76.000 (72.804)
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar', semi_neighbor_k=3, shot_num=5, testepisodeSize=1, unlabel_num=30, way_num=5, workers=8)
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar', semi_neighbor_k=3, shot_num=5, testepisodeSize=1, unlabel_num=30, way_num=5, workers=8)
+=> loaded checkpoint './results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar' (epoch 20)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(20): [100/600]	Time 0.252 (0.239)	Loss 0.744 (0.732)	Prec@1 62.000 (73.327)
+Test-(20): [200/600]	Time 0.203 (0.230)	Loss 0.501 (0.739)	Prec@1 88.000 (73.214)
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar', semi_neighbor_k=5, shot_num=5, testepisodeSize=1, unlabel_num=30, way_num=5, workers=8)
+=> loaded checkpoint './results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar' (epoch 20)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(20): [100/600]	Time 0.219 (0.242)	Loss 0.725 (0.776)	Prec@1 74.000 (71.723)
+Test-(20): [200/600]	Time 0.221 (0.228)	Loss 0.342 (0.761)	Prec@1 88.000 (71.682)
+Test-(20): [300/600]	Time 0.243 (0.225)	Loss 0.422 (0.760)	Prec@1 88.000 (71.860)
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_augmentation=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar', semi_neighbor_k=3, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=30, way_num=5, workers=8)
+=> loaded checkpoint './results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar' (epoch 20)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(20): [100/600]	Time 0.426 (0.490)	Loss 0.693 (0.661)	Prec@1 72.000 (76.416)
+Test-(20): [200/600]	Time 0.448 (0.475)	Loss 0.515 (0.658)	Prec@1 80.000 (76.070)
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_augmentation=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar', semi_neighbor_k=3, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=30, way_num=5, workers=8)
+=> loaded checkpoint './results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar' (epoch 27)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(27): [100/600]	Time 0.430 (0.482)	Loss 0.865 (0.682)	Prec@1 68.000 (74.634)
+Test-(27): [200/600]	Time 0.447 (0.470)	Loss 0.828 (0.697)	Prec@1 62.000 (74.517)
+Test-(27): [300/600]	Time 0.519 (0.467)	Loss 0.370 (0.696)	Prec@1 84.000 (74.419)
+Test-(27): [400/600]	Time 0.453 (0.466)	Loss 0.428 (0.696)	Prec@1 86.000 (74.299)
+Test-(27): [500/600]	Time 0.482 (0.467)	Loss 0.473 (0.688)	Prec@1 84.000 (74.639)
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_augmentation=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar', semi_neighbor_k=3, shot_num=5, testepisodeSize=1, unlabel_num=10, way_num=5, workers=8)
+=> loaded checkpoint './results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar' (epoch 27)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(27): [100/600]	Time 0.211 (0.239)	Loss 0.843 (0.769)	Prec@1 68.000 (71.505)
+Test-(27): [200/600]	Time 0.218 (0.231)	Loss 0.533 (0.777)	Prec@1 84.000 (70.796)
+Test-(27): [300/600]	Time 0.215 (0.228)	Loss 0.580 (0.766)	Prec@1 78.000 (71.236)
+Test-(27): [400/600]	Time 0.205 (0.227)	Loss 0.465 (0.749)	Prec@1 82.000 (71.990)
+Test-(27): [500/600]	Time 0.218 (0.226)	Loss 0.665 (0.747)	Prec@1 80.000 (72.044)
+ * Prec@1 71.960 Best_prec1 70.788
+Test accuracy 71.96 h 0.8025415
+===================================== Round 1 =====================================
+Testset: 600-------------1
+Test-(27): [100/600]	Time 0.226 (0.239)	Loss 0.953 (0.722)	Prec@1 66.000 (73.505)
+Test-(27): [200/600]	Time 0.218 (0.231)	Loss 0.457 (0.715)	Prec@1 84.000 (73.035)
+Test-(27): [300/600]	Time 0.228 (0.229)	Loss 0.551 (0.720)	Prec@1 82.000 (73.063)
+Test-(27): [400/600]	Time 0.220 (0.227)	Loss 0.697 (0.715)	Prec@1 70.000 (73.087)
+Test-(27): [500/600]	Time 0.214 (0.226)	Loss 0.369 (0.714)	Prec@1 86.000 (73.253)
+ * Prec@1 73.170 Best_prec1 70.788
+Test accuracy 73.17 h 0.7585413
+===================================== Round 2 =====================================
+Testset: 600-------------2
+Test-(27): [100/600]	Time 0.241 (0.242)	Loss 0.554 (0.715)	Prec@1 78.000 (73.248)
+Test-(27): [200/600]	Time 0.207 (0.232)	Loss 0.578 (0.733)	Prec@1 82.000 (72.408)
+Test-(27): [300/600]	Time 0.232 (0.229)	Loss 0.684 (0.734)	Prec@1 78.000 (72.492)
+Test-(27): [400/600]	Time 0.216 (0.228)	Loss 1.270 (0.737)	Prec@1 56.000 (72.444)
+Test-(27): [500/600]	Time 0.214 (0.226)	Loss 0.560 (0.731)	Prec@1 84.000 (72.770)
+ * Prec@1 72.873 Best_prec1 70.788
+Test accuracy 72.87334 h 0.73016524
+===================================== Round 3 =====================================
+Testset: 600-------------3
+Test-(27): [100/600]	Time 0.229 (0.242)	Loss 0.852 (0.753)	Prec@1 68.000 (71.446)
+Test-(27): [200/600]	Time 0.225 (0.233)	Loss 0.595 (0.736)	Prec@1 84.000 (72.000)
+Test-(27): [300/600]	Time 0.224 (0.230)	Loss 0.439 (0.726)	Prec@1 88.000 (72.678)
+Test-(27): [400/600]	Time 0.205 (0.229)	Loss 0.768 (0.726)	Prec@1 72.000 (72.763)
+Test-(27): [500/600]	Time 0.243 (0.228)	Loss 0.889 (0.727)	Prec@1 64.000 (72.918)
+ * Prec@1 72.783 Best_prec1 70.788
+Test accuracy 72.78333 h 0.72938186
+===================================== Round 4 =====================================
+Testset: 600-------------4
+Test-(27): [100/600]	Time 0.203 (0.241)	Loss 0.992 (0.715)	Prec@1 66.000 (73.149)
+Test-(27): [200/600]	Time 0.221 (0.232)	Loss 0.948 (0.717)	Prec@1 60.000 (73.104)
+Test-(27): [300/600]	Time 0.223 (0.230)	Loss 0.635 (0.747)	Prec@1 74.000 (72.066)
+Test-(27): [400/600]	Time 0.212 (0.228)	Loss 0.920 (0.743)	Prec@1 60.000 (72.105)
+Test-(27): [500/600]	Time 0.217 (0.227)	Loss 0.967 (0.746)	Prec@1 74.000 (71.992)
+ * Prec@1 72.013 Best_prec1 70.788
+Test accuracy 72.013336 h 0.70887756
+Aver_accuracy: 72.56 Aver_h 0.7459014892578125
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_augmentation=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar', semi_neighbor_k=3, shot_num=5, testepisodeSize=1, unlabel_num=10, way_num=5, workers=8)
+=> loaded checkpoint './results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar' (epoch 27)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(27): [100/600]	Time 0.220 (0.237)	Loss 0.646 (0.730)	Prec@1 80.000 (72.891)
+Test-(27): [200/600]	Time 0.211 (0.226)	Loss 0.730 (0.754)	Prec@1 70.000 (71.791)
+Test-(27): [300/600]	Time 0.207 (0.223)	Loss 0.983 (0.755)	Prec@1 64.000 (71.967)
+Test-(27): [400/600]	Time 0.213 (0.222)	Loss 0.801 (0.752)	Prec@1 62.000 (71.995)
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar', semi_neighbor_k=3, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=30, way_num=5, workers=8)
+=> loaded checkpoint './results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar' (epoch 27)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(27): [100/600]	Time 0.440 (0.492)	Loss 0.505 (0.666)	Prec@1 78.000 (75.743)
+Test-(27): [200/600]	Time 0.442 (0.474)	Loss 0.746 (0.680)	Prec@1 64.000 (74.637)
+Test-(27): [300/600]	Time 0.481 (0.471)	Loss 0.560 (0.685)	Prec@1 74.000 (74.458)
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar', semi_neighbor_k=3, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=30, way_num=5, workers=8)
+=> loaded checkpoint './results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar' (epoch 27)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(27): [100/600]	Time 0.475 (0.500)	Loss 0.386 (0.701)	Prec@1 84.000 (74.515)
+Test-(27): [200/600]	Time 0.461 (0.486)	Loss 0.836 (0.685)	Prec@1 76.000 (75.124)
+Test-(27): [300/600]	Time 0.471 (0.478)	Loss 0.791 (0.687)	Prec@1 66.000 (74.824)
+Test-(27): [400/600]	Time 0.435 (0.477)	Loss 0.726 (0.677)	Prec@1 72.000 (75.162)
+Test-(27): [500/600]	Time 0.459 (0.475)	Loss 1.027 (0.677)	Prec@1 64.000 (75.054)
+ * Prec@1 75.107 Best_prec1 70.788
+Test accuracy 75.10667 h 0.74899143
+===================================== Round 1 =====================================
+Testset: 600-------------1
+Test-(27): [100/600]	Time 0.443 (0.496)	Loss 0.669 (0.674)	Prec@1 74.000 (74.851)
+Test-(27): [200/600]	Time 0.546 (0.483)	Loss 0.630 (0.684)	Prec@1 78.000 (74.458)
+Test-(27): [300/600]	Time 0.464 (0.479)	Loss 0.797 (0.689)	Prec@1 70.000 (74.365)
+Test-(27): [400/600]	Time 0.487 (0.476)	Loss 1.571 (0.689)	Prec@1 44.000 (74.534)
+Test-(27): [500/600]	Time 0.441 (0.474)	Loss 0.465 (0.686)	Prec@1 82.000 (74.647)
+ * Prec@1 74.520 Best_prec1 70.788
+Test accuracy 74.52 h 0.73157036
+===================================== Round 2 =====================================
+Testset: 600-------------2
+Test-(27): [100/600]	Time 0.459 (0.499)	Loss 0.825 (0.699)	Prec@1 58.000 (74.059)
+Test-(27): [200/600]	Time 0.469 (0.484)	Loss 0.632 (0.681)	Prec@1 76.000 (74.786)
+Test-(27): [300/600]	Time 0.450 (0.478)	Loss 0.347 (0.679)	Prec@1 90.000 (74.777)
+Test-(27): [400/600]	Time 0.447 (0.475)	Loss 0.608 (0.682)	Prec@1 72.000 (74.628)
+Test-(27): [500/600]	Time 0.475 (0.473)	Loss 0.622 (0.688)	Prec@1 76.000 (74.463)
+ * Prec@1 74.413 Best_prec1 70.788
+Test accuracy 74.41333 h 0.72214854
+===================================== Round 3 =====================================
+Testset: 600-------------3
+Test-(27): [100/600]	Time 0.479 (0.496)	Loss 0.897 (0.704)	Prec@1 68.000 (73.644)
+Test-(27): [200/600]	Time 0.466 (0.481)	Loss 0.617 (0.701)	Prec@1 68.000 (73.612)
+Test-(27): [300/600]	Time 0.431 (0.476)	Loss 0.979 (0.702)	Prec@1 66.000 (73.542)
+Test-(27): [400/600]	Time 0.436 (0.473)	Loss 0.747 (0.694)	Prec@1 78.000 (74.070)
+Test-(27): [500/600]	Time 0.513 (0.471)	Loss 0.746 (0.695)	Prec@1 74.000 (74.172)
+ * Prec@1 74.213 Best_prec1 70.788
+Test accuracy 74.21333 h 0.7359503
+===================================== Round 4 =====================================
+Testset: 600-------------4
+Test-(27): [100/600]	Time 0.455 (0.495)	Loss 0.308 (0.671)	Prec@1 88.000 (76.020)
+Test-(27): [200/600]	Time 0.484 (0.479)	Loss 0.498 (0.690)	Prec@1 78.000 (75.184)
+Test-(27): [300/600]	Time 0.438 (0.477)	Loss 0.804 (0.686)	Prec@1 74.000 (74.944)
+Test-(27): [400/600]	Time 0.473 (0.475)	Loss 0.533 (0.693)	Prec@1 72.000 (74.359)
+Test-(27): [500/600]	Time 0.493 (0.473)	Loss 0.409 (0.704)	Prec@1 82.000 (73.976)
+ * Prec@1 74.220 Best_prec1 70.788
+Test accuracy 74.22 h 0.7293754
+Aver_accuracy: 74.49467 Aver_h 0.7336072087287903
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar', semi_neighbor_k=3, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=10, way_num=5, workers=8)
+=> loaded checkpoint './results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar' (epoch 27)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(27): [100/600]	Time 0.231 (0.237)	Loss 0.776 (0.748)	Prec@1 76.000 (72.693)
+Test-(27): [200/600]	Time 0.209 (0.227)	Loss 0.849 (0.755)	Prec@1 72.000 (72.070)
+Test-(27): [300/600]	Time 0.209 (0.224)	Loss 0.745 (0.752)	Prec@1 76.000 (72.266)
+Test-(27): [400/600]	Time 0.222 (0.223)	Loss 0.642 (0.749)	Prec@1 70.000 (72.494)
+Test-(27): [500/600]	Time 0.218 (0.223)	Loss 0.804 (0.751)	Prec@1 70.000 (72.263)
+ * Prec@1 72.157 Best_prec1 70.788
+Test accuracy 72.15667 h 0.7143473
+===================================== Round 1 =====================================
+Testset: 600-------------1
+Test-(27): [100/600]	Time 0.287 (0.240)	Loss 0.707 (0.713)	Prec@1 72.000 (73.624)
+Test-(27): [200/600]	Time 0.274 (0.231)	Loss 0.566 (0.720)	Prec@1 80.000 (73.542)
+Test-(27): [300/600]	Time 0.239 (0.228)	Loss 0.269 (0.716)	Prec@1 92.000 (73.621)
+Test-(27): [400/600]	Time 0.225 (0.227)	Loss 0.530 (0.721)	Prec@1 82.000 (73.277)
+Test-(27): [500/600]	Time 0.225 (0.226)	Loss 0.905 (0.729)	Prec@1 66.000 (72.870)
+ * Prec@1 72.690 Best_prec1 70.788
+Test accuracy 72.69 h 0.7356706
+===================================== Round 2 =====================================
+Testset: 600-------------2
+Test-(27): [100/600]	Time 0.228 (0.241)	Loss 0.706 (0.759)	Prec@1 72.000 (71.287)
+Test-(27): [200/600]	Time 0.243 (0.232)	Loss 0.520 (0.755)	Prec@1 82.000 (71.970)
+Test-(27): [300/600]	Time 0.204 (0.229)	Loss 0.903 (0.759)	Prec@1 62.000 (71.814)
+Test-(27): [400/600]	Time 0.226 (0.228)	Loss 0.929 (0.753)	Prec@1 62.000 (72.005)
+Test-(27): [500/600]	Time 0.205 (0.227)	Loss 0.815 (0.745)	Prec@1 78.000 (72.295)
+ * Prec@1 72.377 Best_prec1 70.788
+Test accuracy 72.37666 h 0.73590785
+===================================== Round 3 =====================================
+Testset: 600-------------3
+Test-(27): [100/600]	Time 0.232 (0.242)	Loss 0.597 (0.743)	Prec@1 78.000 (72.832)
+Test-(27): [200/600]	Time 0.226 (0.234)	Loss 0.882 (0.732)	Prec@1 72.000 (73.383)
+Test-(27): [300/600]	Time 0.211 (0.230)	Loss 0.846 (0.728)	Prec@1 78.000 (73.542)
+Test-(27): [400/600]	Time 0.224 (0.228)	Loss 0.678 (0.732)	Prec@1 72.000 (73.237)
+Test-(27): [500/600]	Time 0.218 (0.227)	Loss 0.649 (0.735)	Prec@1 70.000 (73.130)
+ * Prec@1 72.683 Best_prec1 70.788
+Test accuracy 72.683334 h 0.7140359
+===================================== Round 4 =====================================
+Testset: 600-------------4
+Test-(27): [100/600]	Time 0.225 (0.243)	Loss 1.037 (0.742)	Prec@1 70.000 (71.822)
+Test-(27): [200/600]	Time 0.215 (0.234)	Loss 0.716 (0.741)	Prec@1 76.000 (71.970)
+Test-(27): [300/600]	Time 0.231 (0.230)	Loss 0.766 (0.740)	Prec@1 72.000 (72.452)
+Test-(27): [400/600]	Time 0.218 (0.228)	Loss 0.856 (0.748)	Prec@1 62.000 (72.010)
+Test-(27): [500/600]	Time 0.217 (0.228)	Loss 0.648 (0.744)	Prec@1 74.000 (72.064)
+ * Prec@1 72.250 Best_prec1 70.788
+Test accuracy 72.25 h 0.7413682
+Aver_accuracy: 72.431335 Aver_h 0.7282659769058227
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar', semi_neighbor_k=3, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=30, way_num=5, workers=8)
+=> loaded checkpoint './results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar' (epoch 27)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(27): [100/600]	Time 0.435 (0.490)	Loss 0.748 (0.669)	Prec@1 68.000 (75.366)
+Test-(27): [200/600]	Time 0.460 (0.470)	Loss 0.562 (0.690)	Prec@1 80.000 (74.577)
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/base_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar', semi_neighbor_k=3, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=30, way_num=5, workers=8)
+=> loaded checkpoint './results/base_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar' (epoch 22)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/base_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar', semi_neighbor_k=3, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=30, way_num=5, workers=8)
+=> loaded checkpoint './results/base_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar' (epoch 22)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(22): [100/600]	Time 0.447 (0.483)	Loss 0.756 (0.697)	Prec@1 76.000 (73.624)
+Test-(22): [200/600]	Time 0.459 (0.468)	Loss 0.761 (0.684)	Prec@1 68.000 (74.418)
+Test-(22): [300/600]	Time 0.433 (0.464)	Loss 0.819 (0.688)	Prec@1 62.000 (74.279)
+Test-(22): [400/600]	Time 0.470 (0.463)	Loss 0.759 (0.694)	Prec@1 74.000 (74.020)
+Test-(22): [500/600]	Time 0.448 (0.463)	Loss 0.727 (0.695)	Prec@1 76.000 (74.012)
+ * Prec@1 74.047 Best_prec1 68.122
+Test accuracy 74.04667 h 0.7129745
+===================================== Round 1 =====================================
+Testset: 600-------------1
+Test-(22): [100/600]	Time 0.477 (0.496)	Loss 0.681 (0.704)	Prec@1 72.000 (74.158)
+Test-(22): [200/600]	Time 0.471 (0.481)	Loss 0.921 (0.690)	Prec@1 60.000 (74.438)
+Test-(22): [300/600]	Time 0.477 (0.476)	Loss 0.745 (0.695)	Prec@1 74.000 (73.980)
+Test-(22): [400/600]	Time 0.440 (0.472)	Loss 1.013 (0.697)	Prec@1 66.000 (73.965)
+Test-(22): [500/600]	Time 0.448 (0.471)	Loss 1.050 (0.697)	Prec@1 66.000 (74.016)
+ * Prec@1 73.947 Best_prec1 68.122
+Test accuracy 73.94666 h 0.7210539
+===================================== Round 2 =====================================
+Testset: 600-------------2
+Test-(22): [100/600]	Time 0.441 (0.497)	Loss 0.655 (0.683)	Prec@1 70.000 (74.178)
+Test-(22): [200/600]	Time 0.467 (0.483)	Loss 0.790 (0.686)	Prec@1 74.000 (74.100)
+Test-(22): [300/600]	Time 0.466 (0.477)	Loss 0.774 (0.694)	Prec@1 76.000 (73.754)
+Test-(22): [400/600]	Time 0.482 (0.475)	Loss 0.726 (0.694)	Prec@1 72.000 (73.771)
+Test-(22): [500/600]	Time 0.475 (0.474)	Loss 0.687 (0.694)	Prec@1 74.000 (73.904)
+ * Prec@1 73.890 Best_prec1 68.122
+Test accuracy 73.89 h 0.7270895
+===================================== Round 3 =====================================
+Testset: 600-------------3
+Test-(22): [100/600]	Time 0.442 (0.497)	Loss 0.973 (0.694)	Prec@1 66.000 (73.683)
+Test-(22): [200/600]	Time 0.462 (0.483)	Loss 0.705 (0.693)	Prec@1 70.000 (73.751)
+Test-(22): [300/600]	Time 0.461 (0.478)	Loss 0.917 (0.696)	Prec@1 64.000 (73.894)
+Test-(22): [400/600]	Time 0.514 (0.476)	Loss 0.971 (0.694)	Prec@1 64.000 (73.860)
+Test-(22): [500/600]	Time 0.440 (0.474)	Loss 0.729 (0.697)	Prec@1 74.000 (73.713)
+ * Prec@1 73.847 Best_prec1 68.122
+Test accuracy 73.846664 h 0.7220325
+===================================== Round 4 =====================================
+Testset: 600-------------4
+Test-(22): [100/600]	Time 0.494 (0.498)	Loss 0.459 (0.695)	Prec@1 82.000 (73.386)
+Test-(22): [200/600]	Time 0.463 (0.482)	Loss 0.853 (0.684)	Prec@1 66.000 (74.169)
+Test-(22): [300/600]	Time 0.490 (0.477)	Loss 0.485 (0.684)	Prec@1 82.000 (74.213)
+Test-(22): [400/600]	Time 0.452 (0.475)	Loss 0.493 (0.693)	Prec@1 80.000 (73.980)
+Test-(22): [500/600]	Time 0.441 (0.473)	Loss 0.813 (0.696)	Prec@1 70.000 (73.856)
+ * Prec@1 73.703 Best_prec1 68.122
+Test accuracy 73.70333 h 0.74995095
+Aver_accuracy: 73.886665 Aver_h 0.7266202688217163
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar', semi_neighbor_k=3, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=30, way_num=5, workers=8)
+=> loaded checkpoint './results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar' (epoch 27)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='./dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/base-split_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar', semi_neighbor_k=3, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=30, way_num=5, workers=8)
+=> loaded checkpoint './results/base-split_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar' (epoch 29)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='./dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/base-split_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar', semi_neighbor_k=3, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=30, way_num=5, workers=8)
+=> loaded checkpoint './results/base-split_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar' (epoch 29)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/base-split_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar', semi_neighbor_k=3, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=30, way_num=5, workers=8)
+=> loaded checkpoint './results/base-split_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar' (epoch 29)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(29): [100/600]	Time 0.455 (0.526)	Loss 0.848 (0.709)	Prec@1 66.000 (73.228)
+Test-(29): [200/600]	Time 0.446 (0.490)	Loss 1.203 (0.722)	Prec@1 58.000 (73.104)
+Test-(29): [300/600]	Time 0.449 (0.479)	Loss 0.842 (0.703)	Prec@1 70.000 (73.960)
+Test-(29): [400/600]	Time 0.455 (0.475)	Loss 0.523 (0.703)	Prec@1 80.000 (73.980)
+Test-(29): [500/600]	Time 0.450 (0.472)	Loss 1.324 (0.714)	Prec@1 50.000 (73.649)
+ * Prec@1 73.300 Best_prec1 67.238
+Test accuracy 73.3 h 0.7570922
+===================================== Round 1 =====================================
+Testset: 600-------------1
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/base-split_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar', semi_neighbor_k=3, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=10, way_num=5, workers=8)
+=> loaded checkpoint './results/base-split_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar' (epoch 29)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(29): [100/600]	Time 0.210 (0.240)	Loss 0.608 (0.727)	Prec@1 74.000 (73.327)
+Test-(29): [200/600]	Time 0.217 (0.228)	Loss 0.305 (0.739)	Prec@1 90.000 (72.537)
+Test-(29): [300/600]	Time 0.215 (0.224)	Loss 0.595 (0.758)	Prec@1 70.000 (72.086)
+Test-(29): [400/600]	Time 0.226 (0.223)	Loss 0.789 (0.766)	Prec@1 68.000 (71.870)
+Test-(29): [500/600]	Time 0.263 (0.223)	Loss 0.887 (0.767)	Prec@1 62.000 (71.741)
+ * Prec@1 71.517 Best_prec1 67.238
+Test accuracy 71.51667 h 0.77451026
+===================================== Round 1 =====================================
+Testset: 600-------------1
+Test-(29): [100/600]	Time 0.208 (0.240)	Loss 0.866 (0.736)	Prec@1 56.000 (72.416)
+Test-(29): [200/600]	Time 0.205 (0.232)	Loss 0.428 (0.732)	Prec@1 88.000 (72.826)
+Test-(29): [300/600]	Time 0.220 (0.229)	Loss 0.520 (0.746)	Prec@1 74.000 (72.412)
+Test-(29): [400/600]	Time 0.246 (0.228)	Loss 0.849 (0.744)	Prec@1 70.000 (72.359)
+Test-(29): [500/600]	Time 0.227 (0.227)	Loss 1.058 (0.747)	Prec@1 72.000 (72.248)
+ * Prec@1 72.060 Best_prec1 67.238
+Test accuracy 72.06 h 0.7301613
+===================================== Round 2 =====================================
+Testset: 600-------------2
+Test-(29): [100/600]	Time 0.243 (0.243)	Loss 0.751 (0.774)	Prec@1 74.000 (71.525)
+Test-(29): [200/600]	Time 0.202 (0.233)	Loss 0.764 (0.774)	Prec@1 72.000 (70.995)
+Test-(29): [300/600]	Time 0.219 (0.230)	Loss 0.912 (0.775)	Prec@1 66.000 (71.249)
+Test-(29): [400/600]	Time 0.228 (0.229)	Loss 0.748 (0.783)	Prec@1 76.000 (71.027)
+Test-(29): [500/600]	Time 0.217 (0.228)	Loss 0.395 (0.783)	Prec@1 84.000 (70.922)
+ * Prec@1 70.793 Best_prec1 67.238
+Test accuracy 70.793335 h 0.76389664
+===================================== Round 3 =====================================
+Testset: 600-------------3
+Test-(29): [100/600]	Time 0.226 (0.243)	Loss 0.865 (0.739)	Prec@1 64.000 (72.020)
+Test-(29): [200/600]	Time 0.221 (0.233)	Loss 0.609 (0.749)	Prec@1 68.000 (71.781)
+Test-(29): [300/600]	Time 0.220 (0.230)	Loss 1.008 (0.759)	Prec@1 62.000 (71.814)
+Test-(29): [400/600]	Time 0.227 (0.228)	Loss 0.608 (0.758)	Prec@1 74.000 (71.840)
+Test-(29): [500/600]	Time 0.231 (0.228)	Loss 0.618 (0.767)	Prec@1 78.000 (71.461)
+ * Prec@1 71.393 Best_prec1 67.238
+Test accuracy 71.39333 h 0.7499795
+===================================== Round 4 =====================================
+Testset: 600-------------4
+Test-(29): [100/600]	Time 0.232 (0.241)	Loss 0.479 (0.791)	Prec@1 84.000 (70.871)
+Test-(29): [200/600]	Time 0.244 (0.232)	Loss 0.503 (0.787)	Prec@1 80.000 (70.826)
+Test-(29): [300/600]	Time 0.217 (0.229)	Loss 0.577 (0.777)	Prec@1 76.000 (70.977)
+Test-(29): [400/600]	Time 0.225 (0.228)	Loss 0.916 (0.772)	Prec@1 60.000 (71.092)
+Test-(29): [500/600]	Time 0.250 (0.227)	Loss 0.882 (0.770)	Prec@1 70.000 (71.166)
+ * Prec@1 71.190 Best_prec1 67.238
+Test accuracy 71.19 h 0.7338302
+Aver_accuracy: 71.39066 Aver_h 0.7504755854606628
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar', semi_neighbor_k=5, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=10, way_num=5, workers=8)
+=> loaded checkpoint './results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar' (epoch 20)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(20): [100/600]	Time 0.283 (0.396)	Loss 1.097 (0.719)	Prec@1 66.000 (73.604)
+Test-(20): [200/600]	Time 0.305 (0.376)	Loss 0.846 (0.725)	Prec@1 70.000 (73.473)
+Test-(20): [300/600]	Time 0.411 (0.370)	Loss 0.808 (0.722)	Prec@1 70.000 (73.654)
+Test-(20): [400/600]	Time 0.412 (0.369)	Loss 0.888 (0.728)	Prec@1 72.000 (73.436)
+Test-(20): [500/600]	Time 0.391 (0.368)	Loss 0.464 (0.725)	Prec@1 86.000 (73.493)
+ * Prec@1 73.510 Best_prec1 74.100
+Test accuracy 73.51 h 0.73582816
+===================================== Round 1 =====================================
+Testset: 600-------------1
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar', semi_neighbor_k=5, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=10, way_num=5, workers=8)
+=> loaded checkpoint './results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar' (epoch 27)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(27): [100/600]	Time 0.251 (0.402)	Loss 0.971 (0.719)	Prec@1 68.000 (72.911)
+Test-(27): [200/600]	Time 0.410 (0.380)	Loss 0.599 (0.723)	Prec@1 82.000 (72.995)
+Test-(27): [300/600]	Time 0.351 (0.374)	Loss 0.756 (0.735)	Prec@1 66.000 (72.704)
+Test-(27): [400/600]	Time 0.354 (0.371)	Loss 0.767 (0.738)	Prec@1 74.000 (72.594)
+Test-(27): [500/600]	Time 0.229 (0.367)	Loss 0.445 (0.736)	Prec@1 78.000 (72.563)
+ * Prec@1 72.637 Best_prec1 70.788
+Test accuracy 72.636665 h 0.70803607
+===================================== Round 1 =====================================
+Testset: 600-------------1
+Test-(27): [100/600]	Time 0.476 (0.403)	Loss 0.576 (0.754)	Prec@1 84.000 (73.109)
+Test-(27): [200/600]	Time 0.363 (0.384)	Loss 0.891 (0.770)	Prec@1 64.000 (72.358)
+Test-(27): [300/600]	Time 0.299 (0.377)	Loss 0.858 (0.770)	Prec@1 66.000 (72.159)
+Test-(27): [400/600]	Time 0.339 (0.372)	Loss 0.770 (0.769)	Prec@1 72.000 (72.110)
+Test-(27): [500/600]	Time 0.329 (0.371)	Loss 0.384 (0.767)	Prec@1 80.000 (71.912)
+ * Prec@1 72.050 Best_prec1 70.788
+Test accuracy 72.05 h 0.76969177
+===================================== Round 2 =====================================
+Testset: 600-------------2
+Test-(27): [100/600]	Time 0.239 (0.406)	Loss 0.571 (0.737)	Prec@1 76.000 (73.109)
+Test-(27): [200/600]	Time 0.369 (0.388)	Loss 0.929 (0.757)	Prec@1 60.000 (71.841)
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar', semi_neighbor_k=5, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=10, way_num=5, workers=8)
+=> loaded checkpoint './results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar' (epoch 20)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(20): [100/600]	Time 0.250 (0.350)	Loss 1.092 (0.794)	Prec@1 66.000 (71.188)
+Test-(20): [200/600]	Time 0.156 (0.318)	Loss 0.874 (0.793)	Prec@1 62.000 (70.856)
+Test-(20): [300/600]	Time 0.237 (0.306)	Loss 0.579 (0.786)	Prec@1 78.000 (71.548)
+Test-(20): [400/600]	Time 0.315 (0.301)	Loss 0.715 (0.791)	Prec@1 74.000 (71.421)
+Test-(20): [500/600]	Time 0.190 (0.299)	Loss 0.739 (0.799)	Prec@1 72.000 (71.090)
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar', semi_neighbor_k=5, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=10, way_num=5, workers=8)
+=> loaded checkpoint './results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar' (epoch 20)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar', semi_neighbor_k=5, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=10, way_num=5, workers=8)
+=> loaded checkpoint './results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar' (epoch 20)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(20): [100/600]	Time 0.364 (0.341)	Loss 0.865 (0.803)	Prec@1 68.000 (71.149)
+Test-(20): [200/600]	Time 0.185 (0.321)	Loss 0.985 (0.805)	Prec@1 66.000 (70.687)
+Test-(20): [300/600]	Time 0.328 (0.311)	Loss 0.685 (0.794)	Prec@1 72.000 (70.944)
+Test-(20): [400/600]	Time 0.270 (0.305)	Loss 0.987 (0.800)	Prec@1 78.000 (70.663)
+Test-(20): [500/600]	Time 0.203 (0.304)	Loss 0.815 (0.798)	Prec@1 64.000 (70.810)
+ * Prec@1 70.873 Best_prec1 74.100
+Test accuracy 70.87334 h 0.7098947
+===================================== Round 1 =====================================
+Testset: 600-------------1
+Test-(20): [100/600]	Time 0.161 (0.323)	Loss 0.715 (0.786)	Prec@1 76.000 (71.545)
+Test-(20): [200/600]	Time 0.130 (0.307)	Loss 0.856 (0.795)	Prec@1 60.000 (70.657)
+Test-(20): [300/600]	Time 0.308 (0.303)	Loss 0.581 (0.803)	Prec@1 74.000 (70.571)
+Test-(20): [400/600]	Time 0.326 (0.301)	Loss 0.807 (0.798)	Prec@1 68.000 (70.579)
+Test-(20): [500/600]	Time 0.513 (0.300)	Loss 0.961 (0.802)	Prec@1 64.000 (70.339)
+ * Prec@1 70.337 Best_prec1 74.100
+Test accuracy 70.33667 h 0.777609
+===================================== Round 2 =====================================
+Testset: 600-------------2
+Test-(20): [100/600]	Time 0.333 (0.326)	Loss 0.602 (0.749)	Prec@1 70.000 (72.337)
+Test-(20): [200/600]	Time 0.223 (0.308)	Loss 0.603 (0.751)	Prec@1 70.000 (72.527)
+Test-(20): [300/600]	Time 0.397 (0.304)	Loss 0.855 (0.760)	Prec@1 70.000 (72.080)
+Test-(20): [400/600]	Time 0.361 (0.302)	Loss 0.814 (0.768)	Prec@1 68.000 (71.975)
+Test-(20): [500/600]	Time 0.241 (0.301)	Loss 0.701 (0.773)	Prec@1 72.000 (71.784)
+ * Prec@1 71.523 Best_prec1 74.100
+Test accuracy 71.52333 h 0.734074
+===================================== Round 3 =====================================
+Testset: 600-------------3
+Test-(20): [100/600]	Time 0.405 (0.336)	Loss 0.802 (0.782)	Prec@1 66.000 (71.366)
+Test-(20): [200/600]	Time 0.174 (0.315)	Loss 0.655 (0.778)	Prec@1 76.000 (71.562)
+Test-(20): [300/600]	Time 0.299 (0.306)	Loss 0.976 (0.787)	Prec@1 52.000 (71.169)
+Test-(20): [400/600]	Time 0.325 (0.306)	Loss 0.776 (0.785)	Prec@1 68.000 (71.277)
+Test-(20): [500/600]	Time 0.427 (0.304)	Loss 0.708 (0.787)	Prec@1 72.000 (71.162)
+ * Prec@1 71.163 Best_prec1 74.100
+Test accuracy 71.16333 h 0.72764474
+===================================== Round 4 =====================================
+Testset: 600-------------4
+Test-(20): [100/600]	Time 0.199 (0.324)	Loss 0.775 (0.792)	Prec@1 72.000 (71.129)
+Test-(20): [200/600]	Time 0.272 (0.307)	Loss 0.945 (0.776)	Prec@1 70.000 (71.761)
+Test-(20): [300/600]	Time 0.400 (0.301)	Loss 1.104 (0.776)	Prec@1 64.000 (71.654)
+Test-(20): [400/600]	Time 0.204 (0.298)	Loss 0.791 (0.784)	Prec@1 70.000 (71.446)
+Test-(20): [500/600]	Time 0.259 (0.297)	Loss 0.712 (0.786)	Prec@1 68.000 (71.285)
+ * Prec@1 71.293 Best_prec1 74.100
+Test accuracy 71.293335 h 0.7015462
+Aver_accuracy: 71.038 Aver_h 0.7301537275314331
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar', semi_neighbor_k=5, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=20, way_num=5, workers=8)
+=> loaded checkpoint './results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar' (epoch 20)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(20): [100/600]	Time 0.436 (0.579)	Loss 1.373 (0.755)	Prec@1 62.000 (71.446)
+Test-(20): [200/600]	Time 0.576 (0.530)	Loss 0.793 (0.763)	Prec@1 70.000 (71.692)
+Test-(20): [300/600]	Time 0.633 (0.509)	Loss 0.738 (0.772)	Prec@1 66.000 (71.794)
+Test-(20): [400/600]	Time 0.440 (0.499)	Loss 0.695 (0.777)	Prec@1 68.000 (71.606)
+Test-(20): [500/600]	Time 0.556 (0.494)	Loss 0.413 (0.778)	Prec@1 84.000 (71.609)
+ * Prec@1 71.690 Best_prec1 74.100
+Test accuracy 71.69 h 0.70683414
+===================================== Round 1 =====================================
+Testset: 600-------------1
+Test-(20): [100/600]	Time 0.414 (0.385)	Loss 0.561 (0.798)	Prec@1 76.000 (71.703)
+Test-(20): [200/600]	Time 0.295 (0.376)	Loss 0.644 (0.773)	Prec@1 76.000 (71.841)
+Test-(20): [300/600]	Time 0.305 (0.375)	Loss 0.896 (0.777)	Prec@1 64.000 (71.714)
+Test-(20): [400/600]	Time 0.389 (0.373)	Loss 0.405 (0.780)	Prec@1 88.000 (71.766)
+Test-(20): [500/600]	Time 0.372 (0.373)	Loss 1.058 (0.770)	Prec@1 64.000 (72.048)
+ * Prec@1 72.217 Best_prec1 74.100
+Test accuracy 72.21667 h 0.7298232
+===================================== Round 2 =====================================
+Testset: 600-------------2
+Test-(20): [100/600]	Time 0.490 (0.411)	Loss 0.508 (0.755)	Prec@1 80.000 (72.238)
+Test-(20): [200/600]	Time 0.345 (0.392)	Loss 0.731 (0.756)	Prec@1 68.000 (72.229)
+Test-(20): [300/600]	Time 0.360 (0.386)	Loss 0.900 (0.768)	Prec@1 60.000 (71.914)
+Test-(20): [400/600]	Time 0.433 (0.383)	Loss 0.807 (0.764)	Prec@1 70.000 (71.895)
+Test-(20): [500/600]	Time 0.377 (0.384)	Loss 0.813 (0.761)	Prec@1 74.000 (71.892)
+ * Prec@1 71.830 Best_prec1 74.100
+Test accuracy 71.83 h 0.7409928
+===================================== Round 3 =====================================
+Testset: 600-------------3
+Test-(20): [100/600]	Time 0.264 (0.409)	Loss 0.652 (0.823)	Prec@1 72.000 (70.614)
+Test-(20): [200/600]	Time 0.363 (0.396)	Loss 0.577 (0.794)	Prec@1 76.000 (71.413)
+Test-(20): [300/600]	Time 0.357 (0.390)	Loss 0.931 (0.790)	Prec@1 64.000 (71.827)
+Test-(20): [400/600]	Time 0.465 (0.387)	Loss 0.853 (0.784)	Prec@1 68.000 (71.776)
+Test-(20): [500/600]	Time 0.305 (0.388)	Loss 0.693 (0.781)	Prec@1 68.000 (71.645)
+ * Prec@1 71.963 Best_prec1 74.100
+Test accuracy 71.96333 h 0.7082361
+===================================== Round 4 =====================================
+Testset: 600-------------4
+Test-(20): [100/600]	Time 0.313 (0.418)	Loss 0.684 (0.769)	Prec@1 70.000 (72.238)
+Test-(20): [200/600]	Time 0.191 (0.413)	Loss 0.894 (0.785)	Prec@1 60.000 (71.821)
+Test-(20): [300/600]	Time 0.420 (0.418)	Loss 0.695 (0.794)	Prec@1 72.000 (71.362)
+Test-(20): [400/600]	Time 0.396 (0.413)	Loss 0.784 (0.784)	Prec@1 68.000 (71.626)
+Test-(20): [500/600]	Time 0.207 (0.402)	Loss 1.175 (0.770)	Prec@1 64.000 (72.152)
+ * Prec@1 72.033 Best_prec1 74.100
+Test accuracy 72.03333 h 0.7301134
+Aver_accuracy: 71.94666 Aver_h 0.7231999158859252
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_local_k5_r2/model_best.pth.tar', semi_neighbor_k=5, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=10, way_num=5, workers=8)
+=> no checkpoint found at './results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_local_k5_r2/model_best.pth.tar'
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(0): [100/600]	Time 0.496 (1.006)	Loss 14.622 (8.694)	Prec@1 28.000 (37.327)
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_local_k5_r2/model_best.pth.tar', semi_neighbor_k=5, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=10, way_num=5, workers=8)
+=> loaded checkpoint './results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_local_k5_r2/model_best.pth.tar' (epoch 23)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(23): [100/600]	Time 0.138 (1.084)	Loss 0.917 (0.832)	Prec@1 60.000 (68.931)
+Test-(23): [200/600]	Time 0.138 (1.002)	Loss 0.748 (0.846)	Prec@1 70.000 (68.119)
+Test-(23): [300/600]	Time 0.236 (0.812)	Loss 0.727 (0.831)	Prec@1 66.000 (68.757)
+Test-(23): [400/600]	Time 0.227 (0.689)	Loss 0.760 (0.827)	Prec@1 70.000 (69.002)
+Test-(23): [500/600]	Time 0.259 (0.605)	Loss 0.513 (0.817)	Prec@1 76.000 (69.329)
+ * Prec@1 69.523 Best_prec1 67.958
+Test accuracy 69.52333 h 0.745793
+===================================== Round 1 =====================================
+Testset: 600-------------1
+Test-(23): [100/600]	Time 0.353 (0.303)	Loss 0.784 (0.805)	Prec@1 70.000 (69.604)
+Test-(23): [200/600]	Time 0.241 (0.284)	Loss 0.959 (0.817)	Prec@1 66.000 (69.035)
+Test-(23): [300/600]	Time 0.325 (0.277)	Loss 0.854 (0.818)	Prec@1 68.000 (68.897)
+Test-(23): [400/600]	Time 0.319 (0.274)	Loss 1.032 (0.807)	Prec@1 50.000 (69.307)
+Test-(23): [500/600]	Time 0.242 (0.274)	Loss 0.967 (0.815)	Prec@1 68.000 (69.026)
+ * Prec@1 69.143 Best_prec1 67.958
+Test accuracy 69.14333 h 0.7196042
+===================================== Round 2 =====================================
+Testset: 600-------------2
+Test-(23): [100/600]	Time 0.180 (0.349)	Loss 1.225 (0.840)	Prec@1 62.000 (68.574)
+Test-(23): [200/600]	Time 0.123 (0.374)	Loss 0.545 (0.819)	Prec@1 76.000 (69.234)
+Test-(23): [300/600]	Time 0.144 (0.442)	Loss 0.649 (0.831)	Prec@1 74.000 (68.784)
+Test-(23): [400/600]	Time 0.141 (0.570)	Loss 0.890 (0.829)	Prec@1 66.000 (68.813)
+Test-(23): [500/600]	Time 0.104 (0.653)	Loss 0.695 (0.833)	Prec@1 72.000 (68.615)
+ * Prec@1 68.763 Best_prec1 67.958
+Test accuracy 68.763336 h 0.7124904
+===================================== Round 3 =====================================
+Testset: 600-------------3
+Test-(23): [100/600]	Time 1.322 (0.470)	Loss 0.594 (0.834)	Prec@1 78.000 (68.634)
+Test-(23): [200/600]	Time 0.234 (0.379)	Loss 0.597 (0.814)	Prec@1 70.000 (68.955)
+Test-(23): [300/600]	Time 0.191 (0.343)	Loss 1.007 (0.818)	Prec@1 58.000 (68.744)
+Test-(23): [400/600]	Time 0.207 (0.324)	Loss 0.354 (0.813)	Prec@1 88.000 (68.953)
+Test-(23): [500/600]	Time 0.326 (0.312)	Loss 1.032 (0.810)	Prec@1 58.000 (69.190)
+ * Prec@1 69.250 Best_prec1 67.958
+Test accuracy 69.25 h 0.7550518
+===================================== Round 4 =====================================
+Testset: 600-------------4
+Test-(23): [100/600]	Time 0.205 (0.302)	Loss 0.739 (0.851)	Prec@1 74.000 (68.020)
+Test-(23): [200/600]	Time 0.342 (0.289)	Loss 1.134 (0.821)	Prec@1 54.000 (69.224)
+Test-(23): [300/600]	Time 0.219 (0.286)	Loss 0.783 (0.822)	Prec@1 70.000 (69.010)
+Test-(23): [400/600]	Time 0.151 (0.288)	Loss 1.223 (0.821)	Prec@1 58.000 (69.142)
+Test-(23): [500/600]	Time 0.116 (0.307)	Loss 1.035 (0.825)	Prec@1 54.000 (68.774)
+ * Prec@1 68.843 Best_prec1 67.958
+Test accuracy 68.84333 h 0.73540026
+Aver_accuracy: 69.10467 Aver_h 0.7336679220199585
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/DN4_DA_miniImageNet_Conv64F_5Way_10Shot_K3_semi_aug_global_k3_r1/model_best.pth.tar', semi_neighbor_k=5, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=10, way_num=5, workers=8)
+=> loaded checkpoint './results/DN4_DA_miniImageNet_Conv64F_5Way_10Shot_K3_semi_aug_global_k3_r1/model_best.pth.tar' (epoch 18)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(18): [100/600]	Time 0.381 (0.411)	Loss 0.780 (0.874)	Prec@1 74.000 (70.317)
+Test-(18): [200/600]	Time 0.447 (0.379)	Loss 0.744 (0.854)	Prec@1 72.000 (70.786)
+Test-(18): [300/600]	Time 0.323 (0.365)	Loss 1.057 (0.840)	Prec@1 66.000 (70.990)
+Test-(18): [400/600]	Time 0.342 (0.358)	Loss 0.307 (0.825)	Prec@1 90.000 (71.172)
+Test-(18): [500/600]	Time 0.269 (0.353)	Loss 1.507 (0.834)	Prec@1 62.000 (70.914)
+ * Prec@1 70.777 Best_prec1 78.152
+Test accuracy 70.776665 h 0.68059474
+===================================== Round 1 =====================================
+Testset: 600-------------1
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/DN4_DA_miniImageNet_Conv64F_5Way_10Shot_K3_semi_aug_global_k3_r1/model_best.pth.tar', semi_neighbor_k=5, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=10, way_num=5, workers=8)
+=> loaded checkpoint './results/DN4_DA_miniImageNet_Conv64F_5Way_10Shot_K3_semi_aug_global_k3_r1/model_best.pth.tar' (epoch 18)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(18): [100/600]	Time 0.362 (0.434)	Loss 0.692 (0.842)	Prec@1 78.000 (69.822)
+Test-(18): [200/600]	Time 0.394 (0.408)	Loss 0.408 (0.829)	Prec@1 92.000 (70.746)
+Test-(18): [300/600]	Time 0.342 (0.401)	Loss 0.560 (0.838)	Prec@1 76.000 (70.797)
+Test-(18): [400/600]	Time 0.281 (0.396)	Loss 1.517 (0.851)	Prec@1 56.000 (70.424)
+Test-(18): [500/600]	Time 0.366 (0.393)	Loss 0.553 (0.851)	Prec@1 80.000 (70.555)
+ * Prec@1 70.650 Best_prec1 78.152
+Test accuracy 70.65 h 0.71315366
+===================================== Round 1 =====================================
+Testset: 600-------------1
+Test-(18): [100/600]	Time 0.208 (0.435)	Loss 0.695 (0.804)	Prec@1 74.000 (71.941)
+Test-(18): [200/600]	Time 0.449 (0.409)	Loss 0.720 (0.818)	Prec@1 72.000 (71.393)
+Test-(18): [300/600]	Time 0.447 (0.400)	Loss 0.981 (0.820)	Prec@1 56.000 (71.488)
+Test-(18): [400/600]	Time 0.416 (0.396)	Loss 0.747 (0.831)	Prec@1 76.000 (71.077)
+Test-(18): [500/600]	Time 0.450 (0.393)	Loss 0.702 (0.841)	Prec@1 84.000 (70.834)
+ * Prec@1 70.870 Best_prec1 78.152
+Test accuracy 70.87 h 0.69781506
+===================================== Round 2 =====================================
+Testset: 600-------------2
+Test-(18): [100/600]	Time 0.513 (0.443)	Loss 0.603 (0.864)	Prec@1 74.000 (70.000)
+Test-(18): [200/600]	Time 0.381 (0.417)	Loss 0.551 (0.854)	Prec@1 84.000 (70.498)
+Test-(18): [300/600]	Time 0.288 (0.404)	Loss 1.257 (0.869)	Prec@1 62.000 (70.053)
+Test-(18): [400/600]	Time 0.362 (0.400)	Loss 0.540 (0.882)	Prec@1 84.000 (69.761)
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/DN4_DA_miniImageNet_Conv64F_5Way_10Shot_K3_semi_aug_global_k3_r1/model_best.pth.tar', semi_neighbor_k=5, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=10, way_num=5, workers=8)
+=> loaded checkpoint './results/DN4_DA_miniImageNet_Conv64F_5Way_10Shot_K3_semi_aug_global_k3_r1/model_best.pth.tar' (epoch 18)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(18): [100/600]	Time 0.513 (0.573)	Loss 0.572 (0.721)	Prec@1 76.000 (75.188)
+Test-(18): [200/600]	Time 0.499 (0.535)	Loss 0.808 (0.724)	Prec@1 66.000 (74.886)
+Test-(18): [300/600]	Time 0.613 (0.521)	Loss 0.566 (0.760)	Prec@1 78.000 (73.953)
+Test-(18): [400/600]	Time 0.375 (0.521)	Loss 0.567 (0.770)	Prec@1 80.000 (73.591)
+Test-(18): [500/600]	Time 0.437 (0.518)	Loss 0.556 (0.764)	Prec@1 82.000 (73.860)
+ * Prec@1 73.783 Best_prec1 78.152
+Test accuracy 73.78333 h 0.6707293
+===================================== Round 1 =====================================
+Testset: 600-------------1
+Test-(18): [100/600]	Time 0.395 (0.572)	Loss 1.004 (0.763)	Prec@1 62.000 (74.812)
+Test-(18): [200/600]	Time 0.581 (0.541)	Loss 1.063 (0.759)	Prec@1 64.000 (74.000)
+Test-(18): [300/600]	Time 0.644 (0.527)	Loss 0.615 (0.748)	Prec@1 72.000 (74.219)
+Test-(18): [400/600]	Time 0.549 (0.523)	Loss 0.581 (0.748)	Prec@1 80.000 (74.334)
+Test-(18): [500/600]	Time 0.479 (0.526)	Loss 0.455 (0.749)	Prec@1 82.000 (74.204)
+ * Prec@1 73.950 Best_prec1 78.152
+Test accuracy 73.95 h 0.7122201
+===================================== Round 2 =====================================
+Testset: 600-------------2
+Test-(18): [100/600]	Time 0.679 (0.603)	Loss 1.002 (0.737)	Prec@1 68.000 (73.901)
+Test-(18): [200/600]	Time 0.610 (0.556)	Loss 0.640 (0.739)	Prec@1 76.000 (74.080)
+Test-(18): [300/600]	Time 0.363 (0.539)	Loss 0.731 (0.749)	Prec@1 82.000 (73.907)
+Test-(18): [400/600]	Time 0.592 (0.532)	Loss 0.529 (0.754)	Prec@1 76.000 (73.736)
+Test-(18): [500/600]	Time 0.569 (0.533)	Loss 1.131 (0.747)	Prec@1 62.000 (74.020)
+ * Prec@1 74.097 Best_prec1 78.152
+Test accuracy 74.096664 h 0.6773412
+===================================== Round 3 =====================================
+Testset: 600-------------3
+Test-(18): [100/600]	Time 0.429 (0.596)	Loss 0.428 (0.716)	Prec@1 84.000 (75.129)
+Test-(18): [200/600]	Time 0.619 (0.558)	Loss 0.980 (0.752)	Prec@1 66.000 (74.567)
+Test-(18): [300/600]	Time 0.619 (0.540)	Loss 1.783 (0.743)	Prec@1 50.000 (74.718)
+Test-(18): [400/600]	Time 0.476 (0.536)	Loss 0.325 (0.746)	Prec@1 86.000 (74.384)
+Test-(18): [500/600]	Time 0.411 (0.532)	Loss 2.247 (0.743)	Prec@1 58.000 (74.427)
+ * Prec@1 74.317 Best_prec1 78.152
+Test accuracy 74.316666 h 0.7224928
+===================================== Round 4 =====================================
+Testset: 600-------------4
+Test-(18): [100/600]	Time 0.553 (0.578)	Loss 0.225 (0.776)	Prec@1 94.000 (72.970)
+Test-(18): [200/600]	Time 0.597 (0.543)	Loss 0.471 (0.785)	Prec@1 82.000 (72.975)
+Test-(18): [300/600]	Time 0.491 (0.528)	Loss 0.568 (0.790)	Prec@1 74.000 (72.970)
+Test-(18): [400/600]	Time 0.558 (0.525)	Loss 0.531 (0.781)	Prec@1 88.000 (73.202)
+Test-(18): [500/600]	Time 0.588 (0.524)	Loss 0.293 (0.767)	Prec@1 86.000 (73.493)
+ * Prec@1 73.480 Best_prec1 78.152
+Test accuracy 73.48 h 0.7426356
+Aver_accuracy: 73.92533 Aver_h 0.7050837993621826
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/DN4_DA_miniImageNet_Conv64F_5Way_10Shot_K3_semi_aug_global_k3_r1/model_best.pth.tar', semi_neighbor_k=5, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=10, way_num=5, workers=8)
+=> loaded checkpoint './results/DN4_DA_miniImageNet_Conv64F_5Way_10Shot_K3_semi_aug_global_k3_r1/model_best.pth.tar' (epoch 18)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(18): [100/600]	Time 0.574 (0.487)	Loss 0.620 (0.774)	Prec@1 74.000 (71.861)
+Test-(18): [200/600]	Time 0.438 (0.454)	Loss 0.708 (0.770)	Prec@1 72.000 (72.090)
+Test-(18): [300/600]	Time 0.446 (0.438)	Loss 0.641 (0.774)	Prec@1 80.000 (72.053)
+Test-(18): [400/600]	Time 0.379 (0.429)	Loss 0.364 (0.777)	Prec@1 86.000 (72.135)
+Test-(18): [500/600]	Time 0.532 (0.424)	Loss 0.790 (0.782)	Prec@1 82.000 (71.964)
+ * Prec@1 71.870 Best_prec1 78.152
+Test accuracy 71.87 h 0.7190535
+===================================== Round 1 =====================================
+Testset: 600-------------1
+Test-(18): [100/600]	Time 0.484 (0.428)	Loss 1.066 (0.819)	Prec@1 62.000 (71.406)
+Test-(18): [200/600]	Time 0.294 (0.415)	Loss 1.071 (0.801)	Prec@1 60.000 (71.383)
+Test-(18): [300/600]	Time 0.366 (0.412)	Loss 0.742 (0.798)	Prec@1 70.000 (71.668)
+Test-(18): [400/600]	Time 0.321 (0.410)	Loss 0.467 (0.797)	Prec@1 82.000 (71.676)
+Test-(18): [500/600]	Time 0.526 (0.411)	Loss 1.152 (0.793)	Prec@1 62.000 (71.968)
+ * Prec@1 71.723 Best_prec1 78.152
+Test accuracy 71.723335 h 0.7075302
+===================================== Round 2 =====================================
+Testset: 600-------------2
+Test-(18): [100/600]	Time 0.289 (0.447)	Loss 0.810 (0.816)	Prec@1 64.000 (71.386)
+Test-(18): [200/600]	Time 0.424 (0.427)	Loss 0.836 (0.823)	Prec@1 72.000 (70.726)
+Test-(18): [300/600]	Time 0.586 (0.421)	Loss 0.746 (0.807)	Prec@1 74.000 (71.302)
+Test-(18): [400/600]	Time 0.263 (0.417)	Loss 1.130 (0.813)	Prec@1 66.000 (70.968)
+Test-(18): [500/600]	Time 0.432 (0.416)	Loss 0.599 (0.805)	Prec@1 82.000 (71.238)
+ * Prec@1 71.367 Best_prec1 78.152
+Test accuracy 71.36667 h 0.75195277
+===================================== Round 3 =====================================
+Testset: 600-------------3
+Test-(18): [100/600]	Time 0.562 (0.446)	Loss 0.701 (0.799)	Prec@1 74.000 (71.683)
+Test-(18): [200/600]	Time 0.531 (0.426)	Loss 0.695 (0.772)	Prec@1 62.000 (72.378)
+Test-(18): [300/600]	Time 0.518 (0.419)	Loss 0.964 (0.765)	Prec@1 58.000 (72.731)
+Test-(18): [400/600]	Time 0.547 (0.415)	Loss 0.839 (0.769)	Prec@1 70.000 (72.728)
+Test-(18): [500/600]	Time 0.505 (0.413)	Loss 0.516 (0.760)	Prec@1 76.000 (72.814)
+ * Prec@1 72.490 Best_prec1 78.152
+Test accuracy 72.49 h 0.77342945
+===================================== Round 4 =====================================
+Testset: 600-------------4
+Test-(18): [100/600]	Time 0.267 (0.455)	Loss 0.693 (0.833)	Prec@1 76.000 (70.455)
+Test-(18): [200/600]	Time 0.302 (0.430)	Loss 0.253 (0.796)	Prec@1 94.000 (72.139)
+Test-(18): [300/600]	Time 0.335 (0.423)	Loss 0.611 (0.770)	Prec@1 72.000 (72.439)
+Test-(18): [400/600]	Time 0.315 (0.417)	Loss 0.697 (0.773)	Prec@1 72.000 (72.259)
+Test-(18): [500/600]	Time 0.393 (0.416)	Loss 0.939 (0.785)	Prec@1 62.000 (71.776)
+ * Prec@1 71.487 Best_prec1 78.152
+Test accuracy 71.486664 h 0.73365146
+Aver_accuracy: 71.78733 Aver_h 0.7371234774589539
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_local_k5_r2/model_best.pth.tar', semi_neighbor_k=5, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=10, way_num=5, workers=8)
+=> loaded checkpoint './results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_local_k5_r2/model_best.pth.tar' (epoch 23)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(23): [100/600]	Time 0.191 (0.406)	Loss 0.743 (0.848)	Prec@1 76.000 (67.782)
+Test-(23): [200/600]	Time 0.374 (0.388)	Loss 1.102 (0.822)	Prec@1 54.000 (68.547)
+Test-(23): [300/600]	Time 0.504 (0.381)	Loss 0.618 (0.827)	Prec@1 76.000 (68.585)
+Test-(23): [400/600]	Time 0.361 (0.379)	Loss 1.133 (0.826)	Prec@1 54.000 (68.559)
+Test-(23): [500/600]	Time 0.243 (0.376)	Loss 0.654 (0.822)	Prec@1 76.000 (68.898)
+ * Prec@1 68.703 Best_prec1 67.958
+Test accuracy 68.70333 h 0.7248904
+===================================== Round 1 =====================================
+Testset: 600-------------1
+Test-(23): [100/600]	Time 0.375 (0.402)	Loss 0.867 (0.804)	Prec@1 68.000 (69.109)
+Test-(23): [200/600]	Time 0.393 (0.388)	Loss 0.685 (0.816)	Prec@1 70.000 (69.194)
+Test-(23): [300/600]	Time 0.410 (0.388)	Loss 0.553 (0.819)	Prec@1 74.000 (68.917)
+Test-(23): [400/600]	Time 0.498 (0.386)	Loss 0.878 (0.815)	Prec@1 76.000 (68.923)
+Test-(23): [500/600]	Time 0.365 (0.386)	Loss 0.799 (0.809)	Prec@1 64.000 (69.182)
+ * Prec@1 69.143 Best_prec1 67.958
+Test accuracy 69.14333 h 0.7148759
+===================================== Round 2 =====================================
+Testset: 600-------------2
+Test-(23): [100/600]	Time 0.406 (0.430)	Loss 0.612 (0.870)	Prec@1 80.000 (68.178)
+Test-(23): [200/600]	Time 0.396 (0.408)	Loss 0.964 (0.821)	Prec@1 66.000 (69.642)
+Test-(23): [300/600]	Time 0.251 (0.401)	Loss 1.277 (0.820)	Prec@1 54.000 (69.681)
+Test-(23): [400/600]	Time 0.336 (0.395)	Loss 0.354 (0.818)	Prec@1 92.000 (69.596)
+Test-(23): [500/600]	Time 0.421 (0.394)	Loss 1.135 (0.813)	Prec@1 60.000 (69.792)
+ * Prec@1 69.703 Best_prec1 67.958
+Test accuracy 69.70333 h 0.72923
+===================================== Round 3 =====================================
+Testset: 600-------------3
+Test-(23): [100/600]	Time 0.409 (0.425)	Loss 0.641 (0.769)	Prec@1 80.000 (70.673)
+Test-(23): [200/600]	Time 0.374 (0.399)	Loss 0.930 (0.782)	Prec@1 60.000 (70.119)
+Test-(23): [300/600]	Time 0.275 (0.394)	Loss 0.888 (0.787)	Prec@1 62.000 (70.140)
+Test-(23): [400/600]	Time 0.294 (0.391)	Loss 0.559 (0.797)	Prec@1 80.000 (69.701)
+Test-(23): [500/600]	Time 0.365 (0.387)	Loss 1.043 (0.800)	Prec@1 60.000 (69.489)
+ * Prec@1 69.553 Best_prec1 67.958
+Test accuracy 69.55334 h 0.73510116
+===================================== Round 4 =====================================
+Testset: 600-------------4
+Test-(23): [100/600]	Time 0.401 (0.427)	Loss 0.794 (0.847)	Prec@1 76.000 (67.960)
+Test-(23): [200/600]	Time 0.401 (0.404)	Loss 0.531 (0.834)	Prec@1 76.000 (68.826)
+Test-(23): [300/600]	Time 0.452 (0.394)	Loss 1.013 (0.828)	Prec@1 62.000 (69.030)
+Test-(23): [400/600]	Time 0.329 (0.391)	Loss 0.716 (0.837)	Prec@1 74.000 (68.589)
+Test-(23): [500/600]	Time 0.369 (0.390)	Loss 0.983 (0.827)	Prec@1 56.000 (68.814)
+ * Prec@1 68.630 Best_prec1 67.958
+Test accuracy 68.63 h 0.73718274
+Aver_accuracy: 69.14667 Aver_h 0.7282560348510743
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar', semi_neighbor_k=5, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=10, way_num=5, workers=8)
+=> loaded checkpoint './results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar' (epoch 20)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar', semi_neighbor_k=5, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=10, way_num=5, workers=8)
+=> loaded checkpoint './results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar' (epoch 20)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(20): [100/600]	Time 0.538 (0.594)	Loss 0.521 (0.738)	Prec@1 84.000 (72.614)
+Test-(20): [200/600]	Time 0.348 (0.570)	Loss 0.852 (0.739)	Prec@1 76.000 (73.045)
+Test-(20): [300/600]	Time 0.630 (0.563)	Loss 0.281 (0.737)	Prec@1 92.000 (73.110)
+Test-(20): [400/600]	Time 0.449 (0.556)	Loss 0.457 (0.727)	Prec@1 92.000 (73.526)
+Test-(20): [500/600]	Time 0.603 (0.559)	Loss 0.464 (0.733)	Prec@1 80.000 (73.186)
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar', semi_neighbor_k=5, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=30, way_num=5, workers=8)
+=> loaded checkpoint './results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar' (epoch 20)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(20): [100/600]	Time 0.466 (0.925)	Loss 0.555 (0.775)	Prec@1 72.000 (71.287)
+Test-(20): [200/600]	Time 0.556 (0.771)	Loss 0.360 (0.766)	Prec@1 86.000 (71.502)
+Test-(20): [300/600]	Time 0.307 (0.687)	Loss 0.524 (0.772)	Prec@1 76.000 (71.482)
+Test-(20): [400/600]	Time 0.408 (0.649)	Loss 1.313 (0.782)	Prec@1 54.000 (71.481)
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='/home/code/gumingqi/research/base/dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar', semi_neighbor_k=5, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=30, way_num=5, workers=8)
+=> loaded checkpoint './results/DN4_DA_miniImageNet_Conv64F_5Way_5Shot_K3_semi_aug_global_k5_r2/model_best.pth.tar' (epoch 20)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(20): [100/600]	Time 0.756 (0.724)	Loss 0.837 (0.760)	Prec@1 70.000 (71.881)
+Test-(20): [200/600]	Time 0.575 (0.664)	Loss 1.182 (0.750)	Prec@1 56.000 (72.587)
+Test-(20): [300/600]	Time 0.740 (0.633)	Loss 0.587 (0.740)	Prec@1 78.000 (72.804)
+Test-(20): [400/600]	Time 0.660 (0.616)	Loss 0.710 (0.745)	Prec@1 70.000 (72.479)
+Test-(20): [500/600]	Time 0.512 (0.603)	Loss 0.308 (0.748)	Prec@1 86.000 (72.351)
+ * Prec@1 72.490 Best_prec1 74.100
+Test accuracy 72.49 h 0.72985333
+===================================== Round 1 =====================================
+Testset: 600-------------1
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='./dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar', semi_neighbor_k=3, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=30, way_num=5, workers=8)
+=> loaded checkpoint './results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar' (epoch 27)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(27): [100/600]	Time 0.411 (0.340)	Loss 0.794 (0.793)	Prec@1 68.000 (70.277)
+Test-(27): [200/600]	Time 0.263 (0.300)	Loss 0.548 (0.769)	Prec@1 82.000 (71.005)
+Test-(27): [300/600]	Time 0.292 (0.287)	Loss 0.873 (0.784)	Prec@1 70.000 (70.718)
+Test-(27): [400/600]	Time 0.314 (0.277)	Loss 0.741 (0.785)	Prec@1 76.000 (70.868)
+Test-(27): [500/600]	Time 0.299 (0.270)	Loss 0.543 (0.783)	Prec@1 78.000 (70.703)
+ * Prec@1 70.600 Best_prec1 70.788
+Test accuracy 70.6 h 0.7454212
+===================================== Round 1 =====================================
+Testset: 600-------------1
+Test-(27): [100/600]	Time 0.258 (0.266)	Loss 0.676 (0.798)	Prec@1 74.000 (70.772)
+Test-(27): [200/600]	Time 0.257 (0.257)	Loss 0.773 (0.796)	Prec@1 68.000 (71.055)
+Test-(27): [300/600]	Time 0.258 (0.254)	Loss 0.864 (0.774)	Prec@1 68.000 (71.561)
+Test-(27): [400/600]	Time 0.200 (0.254)	Loss 0.547 (0.764)	Prec@1 82.000 (72.040)
+Test-(27): [500/600]	Time 0.201 (0.253)	Loss 0.677 (0.759)	Prec@1 76.000 (72.104)
+ * Prec@1 72.073 Best_prec1 70.788
+Test accuracy 72.07333 h 0.72413176
+===================================== Round 2 =====================================
+Testset: 600-------------2
+Test-(27): [100/600]	Time 0.200 (0.269)	Loss 0.614 (0.729)	Prec@1 86.000 (72.673)
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='./dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar', semi_neighbor_k=3, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=30, way_num=5, workers=8)
+=> loaded checkpoint './results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar' (epoch 27)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(27): [100/600]	Time 0.282 (0.409)	Loss 0.933 (0.799)	Prec@1 66.000 (69.366)
+Test-(27): [200/600]	Time 0.263 (0.358)	Loss 0.608 (0.790)	Prec@1 84.000 (69.960)
+Test-(27): [300/600]	Time 0.268 (0.341)	Loss 0.753 (0.787)	Prec@1 66.000 (70.505)
+Test-(27): [400/600]	Time 0.334 (0.330)	Loss 0.587 (0.786)	Prec@1 74.000 (70.414)
+Test-(27): [500/600]	Time 0.313 (0.325)	Loss 0.763 (0.780)	Prec@1 74.000 (70.695)
+ * Prec@1 70.740 Best_prec1 70.788
+Test accuracy 70.74 h 0.7612021
+===================================== Round 1 =====================================
+Testset: 600-------------1
+Test-(27): [100/600]	Time 0.311 (0.312)	Loss 0.546 (0.775)	Prec@1 82.000 (70.891)
+Test-(27): [200/600]	Time 0.282 (0.302)	Loss 0.672 (0.777)	Prec@1 72.000 (70.498)
+Test-(27): [300/600]	Time 0.355 (0.300)	Loss 0.577 (0.764)	Prec@1 76.000 (71.050)
+Test-(27): [400/600]	Time 0.350 (0.298)	Loss 0.825 (0.764)	Prec@1 70.000 (71.187)
+Test-(27): [500/600]	Time 0.322 (0.299)	Loss 0.782 (0.766)	Prec@1 74.000 (71.174)
+ * Prec@1 71.287 Best_prec1 70.788
+Test accuracy 71.28667 h 0.80643445
+===================================== Round 2 =====================================
+Testset: 600-------------2
+Test-(27): [100/600]	Time 0.317 (0.312)	Loss 0.975 (0.791)	Prec@1 64.000 (70.535)
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='./dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar', semi_neighbor_k=3, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=30, way_num=5, workers=8)
+=> loaded checkpoint './results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar' (epoch 27)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(27): [100/600]	Time 0.397 (0.421)	Loss 0.708 (0.705)	Prec@1 74.000 (74.099)
+Test-(27): [200/600]	Time 0.410 (0.413)	Loss 0.201 (0.708)	Prec@1 92.000 (74.090)
+Test-(27): [300/600]	Time 0.470 (0.413)	Loss 0.359 (0.694)	Prec@1 84.000 (74.684)
+Test-(27): [400/600]	Time 0.405 (0.413)	Loss 0.722 (0.705)	Prec@1 72.000 (74.040)
+Test-(27): [500/600]	Time 0.432 (0.413)	Loss 0.993 (0.705)	Prec@1 70.000 (74.112)
+ * Prec@1 74.057 Best_prec1 70.788
+Test accuracy 74.05666 h 0.7313085
+===================================== Round 1 =====================================
+Testset: 600-------------1
+Test-(27): [100/600]	Time 0.431 (0.457)	Loss 0.664 (0.733)	Prec@1 74.000 (73.089)
+Test-(27): [200/600]	Time 0.443 (0.442)	Loss 0.679 (0.732)	Prec@1 72.000 (73.095)
+Test-(27): [300/600]	Time 0.476 (0.438)	Loss 0.460 (0.719)	Prec@1 78.000 (73.721)
+Test-(27): [400/600]	Time 0.445 (0.434)	Loss 0.727 (0.715)	Prec@1 66.000 (73.815)
+Test-(27): [500/600]	Time 0.427 (0.432)	Loss 0.597 (0.717)	Prec@1 80.000 (73.677)
+ * Prec@1 73.680 Best_prec1 70.788
+Test accuracy 73.68 h 0.76779366
+===================================== Round 2 =====================================
+Testset: 600-------------2
+Test-(27): [100/600]	Time 0.414 (0.454)	Loss 0.450 (0.699)	Prec@1 84.000 (73.624)
+Test-(27): [200/600]	Time 0.405 (0.434)	Loss 1.159 (0.715)	Prec@1 64.000 (73.114)
+Test-(27): [300/600]	Time 0.373 (0.426)	Loss 0.500 (0.713)	Prec@1 82.000 (73.389)
+Test-(27): [400/600]	Time 0.374 (0.426)	Loss 1.103 (0.698)	Prec@1 60.000 (73.840)
+Test-(27): [500/600]	Time 0.453 (0.425)	Loss 0.743 (0.703)	Prec@1 66.000 (73.745)
+ * Prec@1 73.810 Best_prec1 70.788
+Test accuracy 73.81 h 0.7331572
+===================================== Round 3 =====================================
+Testset: 600-------------3
+Test-(27): [100/600]	Time 0.562 (0.498)	Loss 0.755 (0.681)	Prec@1 68.000 (75.644)
+Test-(27): [200/600]	Time 0.481 (0.496)	Loss 0.901 (0.696)	Prec@1 68.000 (75.015)
+Test-(27): [300/600]	Time 0.509 (0.497)	Loss 0.666 (0.711)	Prec@1 78.000 (74.233)
+Test-(27): [400/600]	Time 0.508 (0.500)	Loss 0.324 (0.712)	Prec@1 94.000 (74.110)
+Test-(27): [500/600]	Time 0.523 (0.501)	Loss 0.923 (0.718)	Prec@1 68.000 (73.892)
+ * Prec@1 73.640 Best_prec1 70.788
+Test accuracy 73.64 h 0.70877415
+===================================== Round 4 =====================================
+Testset: 600-------------4
+Test-(27): [100/600]	Time 0.493 (0.531)	Loss 0.615 (0.758)	Prec@1 78.000 (72.455)
+Test-(27): [200/600]	Time 0.426 (0.517)	Loss 0.482 (0.726)	Prec@1 76.000 (73.383)
+Test-(27): [300/600]	Time 0.521 (0.509)	Loss 0.498 (0.726)	Prec@1 78.000 (73.262)
+Test-(27): [400/600]	Time 0.493 (0.502)	Loss 0.705 (0.733)	Prec@1 72.000 (72.998)
+Test-(27): [500/600]	Time 0.506 (0.498)	Loss 0.538 (0.737)	Prec@1 74.000 (72.679)
+ * Prec@1 72.947 Best_prec1 70.788
+Test accuracy 72.94666 h 0.74142456
+Aver_accuracy: 73.62666 Aver_h 0.7364916205406189
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='miniImageNet', dataset_dir='./dataset/miniImageNet', episodeSize=1, episode_test_num=600, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.005, metric='ImgtoClass', mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3', print_freq=100, query_num=10, resume='./results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar', semi_neighbor_k=5, semi_ratio=2, shot_num=5, testepisodeSize=1, unlabel_num=30, way_num=5, workers=8)
+=> loaded checkpoint './results/base-semi_miniImageNet_Conv64F_ImgtoClass_5Way_5Shot_K3/model_best.pth.tar' (epoch 27)
+ImgtoClass_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace)
+  )
+  (metric): ImgtoClass_Metric()
+  (aug): Support_AUG_Image()
+)
+===================================== Round 0 =====================================
+Testset: 600-------------0
+Test-(27): [100/600]	Time 0.431 (0.500)	Loss 0.705 (0.690)	Prec@1 82.000 (74.713)
+Test-(27): [200/600]	Time 0.481 (0.493)	Loss 0.717 (0.711)	Prec@1 70.000 (73.721)
+Test-(27): [300/600]	Time 0.472 (0.492)	Loss 0.362 (0.716)	Prec@1 92.000 (73.189)
+Test-(27): [400/600]	Time 0.465 (0.492)	Loss 0.862 (0.717)	Prec@1 74.000 (73.476)
+Test-(27): [500/600]	Time 0.492 (0.490)	Loss 0.471 (0.714)	Prec@1 78.000 (73.501)
+ * Prec@1 73.607 Best_prec1 70.788
+Test accuracy 73.60667 h 0.755852
+===================================== Round 1 =====================================
+Testset: 600-------------1
+Test-(27): [100/600]	Time 0.447 (0.519)	Loss 0.455 (0.707)	Prec@1 80.000 (74.257)
+Test-(27): [200/600]	Time 0.442 (0.496)	Loss 0.691 (0.693)	Prec@1 70.000 (74.647)
+Test-(27): [300/600]	Time 0.482 (0.489)	Loss 0.888 (0.700)	Prec@1 70.000 (74.439)
+Test-(27): [400/600]	Time 0.511 (0.488)	Loss 0.474 (0.702)	Prec@1 86.000 (74.574)
+Test-(27): [500/600]	Time 0.511 (0.486)	Loss 0.554 (0.698)	Prec@1 82.000 (74.750)
+ * Prec@1 74.440 Best_prec1 70.788
+Test accuracy 74.44 h 0.7238878
+===================================== Round 2 =====================================
+Testset: 600-------------2
+Test-(27): [100/600]	Time 0.420 (0.509)	Loss 0.798 (0.732)	Prec@1 72.000 (72.931)
+Test-(27): [200/600]	Time 0.464 (0.494)	Loss 0.773 (0.735)	Prec@1 76.000 (73.204)
+Test-(27): [300/600]	Time 0.431 (0.489)	Loss 0.669 (0.740)	Prec@1 68.000 (72.857)
+Test-(27): [400/600]	Time 0.443 (0.488)	Loss 0.448 (0.737)	Prec@1 78.000 (72.928)
+Test-(27): [500/600]	Time 0.474 (0.486)	Loss 0.562 (0.738)	Prec@1 78.000 (72.830)
+ * Prec@1 73.060 Best_prec1 70.788
+Test accuracy 73.06 h 0.7289256
+===================================== Round 3 =====================================
+Testset: 600-------------3
+Test-(27): [100/600]	Time 0.455 (0.514)	Loss 0.667 (0.755)	Prec@1 80.000 (73.208)
+Test-(27): [200/600]	Time 0.454 (0.500)	Loss 0.624 (0.749)	Prec@1 78.000 (73.244)
+Test-(27): [300/600]	Time 0.506 (0.495)	Loss 1.030 (0.750)	Prec@1 66.000 (72.977)
+Test-(27): [400/600]	Time 0.693 (0.493)	Loss 0.658 (0.743)	Prec@1 70.000 (73.012)
+Test-(27): [500/600]	Time 0.537 (0.492)	Loss 0.737 (0.739)	Prec@1 70.000 (73.094)
+ * Prec@1 73.110 Best_prec1 70.788
+Test accuracy 73.11 h 0.7355131
+===================================== Round 4 =====================================
+Testset: 600-------------4
+Test-(27): [100/600]	Time 0.421 (0.512)	Loss 1.113 (0.786)	Prec@1 58.000 (71.624)
+Test-(27): [200/600]	Time 0.507 (0.498)	Loss 0.656 (0.744)	Prec@1 76.000 (72.876)
+Test-(27): [300/600]	Time 0.453 (0.491)	Loss 0.558 (0.741)	Prec@1 82.000 (72.983)
+Test-(27): [400/600]	Time 0.421 (0.488)	Loss 0.588 (0.738)	Prec@1 78.000 (73.272)
+Test-(27): [500/600]	Time 0.434 (0.486)	Loss 0.912 (0.730)	Prec@1 64.000 (73.549)
+ * Prec@1 73.683 Best_prec1 70.788
+Test accuracy 73.683334 h 0.69715315
+Aver_accuracy: 73.58 Aver_h 0.7282663226127625
